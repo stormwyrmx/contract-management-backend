@@ -1,0 +1,30 @@
+spring:
+  application:
+    name: contract-management-backend
+  profiles:
+    active: dev
+
+server:
+  port: 8080
+
+# mybatis-plus配置
+mybatis-plus:
+  configuration:
+    map-underscore-to-camel-case: true #mybatis-plus自动打开驼峰映射，mybatis则自动关闭
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+  global-config:
+    db-config:
+      id-type: auto
+      logic-delete-field: deleted
+      logic-delete-value: 1 #被删除
+      logic-not-delete-value: 0 #正常
+
+# 日志配置
+logging:
+  level:
+    com:
+      weng:
+        contractmanagementbackend:
+          mapper: debug
+          service: debug
+          controller: debug
