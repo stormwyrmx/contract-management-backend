@@ -70,6 +70,12 @@ public class ContractServiceImpl extends ServiceImpl<ContractMapper, Contract>
         contractMapper.updateById(contract);
     }
 
+    @Override
+    public void finishContract(Long id) {
+        Contract contract = contractMapper.selectById(id);
+        contract.setStatus(1);
+        contractMapper.updateById(contract);
+    }
 
 }
 

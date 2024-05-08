@@ -21,4 +21,6 @@ public interface ContractService extends IService<Contract> {
     void addContract(ContractAddRequest contractAddRequest);
 
     void updateContractById(ContractUpdateRequest contractUpdateRequest);
+
+    void finishContract(Long id);
 }

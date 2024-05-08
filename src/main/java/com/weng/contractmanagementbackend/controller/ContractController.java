@@ -59,5 +59,14 @@ public class ContractController {
         return Result.success(true);
     }
 
+    /**
+     * 将合同状态改为已完成
+     */
+    @PutMapping("/sign/{id}")
+    public Result<Boolean> signContract(@Min(value = 1,message = "id必须大于1") @PathVariable Long id){
+        contractService.finishContract(id);
+        return Result.success(true);
+    }
+
 
 }
